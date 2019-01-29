@@ -1,0 +1,13 @@
+---
+# tasks file for roles/postgres
+
+- name: install postgres
+  yum:
+    name: postgresql-server
+    state: latest
+
+- name: enable postgresql at boot
+  service:
+      name: postgresql
+      enabled: yes
+

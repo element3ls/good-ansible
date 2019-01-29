@@ -1,0 +1,22 @@
+---
+
+# Initiate the repository
+- hosts: all
+  roles:
+     - repo
+
+# Initiate load balancer
+- hosts: frontends 
+  roles: 
+     - haproxy
+
+# Initiate tomcat for the app
+- hosts: apps
+  roles:
+     - tomcat
+
+# Initiate the postgresql
+- hosts: appdbs
+  roles:
+     - postgres
+
